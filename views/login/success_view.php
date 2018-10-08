@@ -57,15 +57,91 @@ footer {
     }
 }
 </style>
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
 </head>
 <body>
+  <div id="navbar">
+  <a class="active" href="javascript:void(0)">Etusivu</a>
+  <a href="../controllers/nayta_tilit.php">Tilit</a>
+  <a href="../controllers/luotto.php">Luotto</a>
+  <a href="../controllers/e_laskut.php">E-laskut</a>
+  <a href="../controllers/uusimaksu.php">Uusi maksu</a>
+    <a href="../controllers/logout.php">Kirjaudu ulos</a>
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 
 <header>
   <h2>Tervetuloa<br>NettiPankkiin!</h2>
 </header>
 
   <nav>
-    <img src="http://www.students.oamk.fi/~t6haan02/raha.jpg" align= "rightdown" alt="" width="300" height="250">
+    <img src="http://www.students.oamk.fi/~t6haan02/raha.jpg" align= "rightdown" alt="" width="400" height="380">
   </nav>
 
 
@@ -74,15 +150,12 @@ footer {
       session_start();
       echo '<article>';
       if(isset($_SESSION['idUsers'])) {
-
-      echo '<div align = "center">';
-      echo '<div align = "center"><h2>Tervetuloa <b>'.$_SESSION['user'].' !</h2></b></div><br>';
-      echo '<a href="../controllers/nayta_tilit.php">Tilit</a><br><br>';
-      echo '<a href="../controllers/luotto.php">Luotto</a><br><br>';
-      echo '<a href="../controllers/e_laskut.php">E-laskut</a><br><br>';
-      echo '<a href="../controllers/uusimaksu.php">Uusi maksu</a></div>';
-
-      echo '<br><br><br>';
+      echo '<h2>Tervetuloa <b>'.$_SESSION['user'].' !</h2></b><br>';
+      echo '<a href="../controllers/nayta_tilit.php">Tilit</a><br><br>
+       <a href="../controllers/luotto.php">Luotto</a><br><br>
+       <a href="../controllers/e_laskut.php">E-laskut</a><br><br>
+       <a href="../controllers/uusimaksu.php">Uusi maksu</a></div>
+       <br><br><br>';
       echo '<br><a href="../controllers/logout.php"><button>Kirjaudu ulos</button></a>';
     }
     else {
@@ -91,8 +164,5 @@ footer {
     }
    ?>
 </section>
-
-<footer>
-</footer>
 </body>
 </html>
