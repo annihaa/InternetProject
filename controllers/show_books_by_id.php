@@ -1,7 +1,7 @@
 <?php
 include "../models/book_model.php";
-include "../views/book/show_books_by_id_view.php";
-include "../views/book/show_books_view.php";
+include "../views/sisalto/show_books_by_id_view.php";
+include "../views/sisalto/show_books_view.php";
 
 session_start();
 //jos kirjauduttu

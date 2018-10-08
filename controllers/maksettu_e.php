@@ -6,7 +6,7 @@
 </script>
   <div align=center>
 <?php
-include "../views/book/maksettu_e_view.php";
+include "../views/sisalto/maksettu_e_view.php";
 logged_in();
 ?>
 </div>

@@ -1,7 +1,7 @@
 <?php
 include "../models/book_model.php";
-include "../views/book/update_book_view.php";
-include "../views/book/book_message.php";
+include "../views/sisalto/update_book_view.php";
+include "../views/sisalto/book_message.php";
 session_start();
 //jos kirjauduttu
 if(isset($_SESSION['idUsers'])) {

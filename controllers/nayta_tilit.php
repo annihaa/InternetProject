@@ -12,7 +12,7 @@
 <?php
 include "../models/book_model.php";
 //include "../views/login/login_view.php";
-include "../views/book/nayta_tilit_view.php";
+include "../views/sisalto/nayta_tilit_view.php";
 
   session_start();
   //jos kirjauduttu

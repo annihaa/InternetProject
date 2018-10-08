@@ -1,6 +1,6 @@
 <?php
 include "../models/book_model.php";
-include "../views/book/book_message.php";
+include "../views/sisalto/book_message.php";
 
 session_start();
 //jos kirjauduttu

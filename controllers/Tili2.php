@@ -6,7 +6,7 @@
 </script>
   <div align=center>
 <?php
-include "../views/book/tili2_view.php";
+include "../views/sisalto/tili2_view.php";
 logged_in();
 ?>
 </div>
