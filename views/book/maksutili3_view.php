@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ETUSIVU</title>
+<title>Tili3</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body style="background-color:powderblue;">
@@ -61,38 +61,51 @@ footer {
 <body>
 
 <header>
-  <h2>Tervetuloa<br>NettiPankkiin!</h2>
+  <h2>Uusi maksu</h2>
 </header>
 
   <nav>
     <img src="http://www.students.oamk.fi/~t6haan02/raha.jpg" align= "rightdown" alt="" width="300" height="250">
   </nav>
 
+  <article>
+<h2>Maksun tiedot:</h2>
+<form id="sourceForm"  align="left">
 
-   <?php
-    function logged_in(){
-      session_start();
-      echo '<article>';
-      if(isset($_SESSION['idUsers'])) {
 
-      echo '<div align = "center">';
-      echo '<div align = "center"><h2>Tervetuloa <b>'.$_SESSION['user'].' !</h2></b></div><br>';
-      echo '<a href="../controllers/nayta_tilit.php">Tilit</a><br><br>';
-      echo '<a href="../controllers/luotto.php">Luotto</a><br><br>';
-      echo '<a href="../controllers/e_laskut.php">E-laskut</a><br><br>';
-      echo '<a href="../controllers/uusimaksu.php">Uusi maksu</a></div>';
+<h3>Syötä maksun tiedot:</h3><br>
+<form id="targetForm" class="myForm">
+  <label for="valittu_tili">Valittu tili:</label><br/>
+  <input type="text" value="Säästötili"/><br/>
+  <label>IBAN:</label><br/>
+  <input type="text"><br/>
+  <label>BIC:</label><br/>
+  <input type="text"><br/>
+  <label>Vastaanottajan nimi:</label><br/>
+  <input type="text"><br/>
+  <label>Viite/viesti:</label><br/>
+  <input type="text"><br/>
+  <label>Eräpäivä:</label><br/>
+  <input type="text"><br/>
+  <label>Määrä (€):</label><br/>
+  <input type="text"><br/>
+</form>
+</article>
 
-      echo '<br><br><br>';
-      echo '<br><a href="../controllers/logout.php"><button>Kirjaudu ulos</button></a>';
-    }
-    else {
-        header("Location: ../controllers/login.php");
-      }  echo '</article>';
-    }
-   ?>
-</section>
 
-<footer>
-</footer>
+<?php
+function logged_in(){
+  session_start();
+
+echo '<footer>';
+echo '<br><br><br><br>';
+echo '<br><align="left"><a href="../controllers/maksu_hyvaksytty.php"><button>Hyväksy maksu</button></a>';
+echo '<br><br>';
+echo '<a href="../controllers/uusimaksu.php"><button>Peruuta</button></a>';
+echo '</div>';
+echo '</footer>';
+}
+?>
+
 </body>
 </html>

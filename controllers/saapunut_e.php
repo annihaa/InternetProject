@@ -6,7 +6,7 @@
 </script>
   <div align=center>
 <?php
-include "../views/login/success_view.php";
+include "../views/book/saapunut_e_view.php";
 logged_in();
 ?>
 </div>

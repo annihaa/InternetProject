@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/mystyle.css">
+  <body style="background-color:powderblue;">
+  <h1 style="text-align:center;">Tervetuloa NettiPankkiin!</h1>
+
   <?php
   function update_book_form($idBooks,$name,$author){
 
@@ -12,3 +20,5 @@
         </form>';
   }
 ?>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ETUSIVU</title>
+<title>Tili2</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body style="background-color:powderblue;">
@@ -61,38 +61,58 @@ footer {
 <body>
 
 <header>
-  <h2>Tervetuloa<br>NettiPankkiin!</h2>
+  <h2>Tarkastele taloustiliä:</h2>
 </header>
 
   <nav>
     <img src="http://www.students.oamk.fi/~t6haan02/raha.jpg" align= "rightdown" alt="" width="300" height="250">
   </nav>
 
+  <h2 style="text-align:center;">Taloustili: </h2>
+</head>
 
-   <?php
-    function logged_in(){
-      session_start();
-      echo '<article>';
-      if(isset($_SESSION['idUsers'])) {
-
-      echo '<div align = "center">';
-      echo '<div align = "center"><h2>Tervetuloa <b>'.$_SESSION['user'].' !</h2></b></div><br>';
-      echo '<a href="../controllers/nayta_tilit.php">Tilit</a><br><br>';
-      echo '<a href="../controllers/luotto.php">Luotto</a><br><br>';
-      echo '<a href="../controllers/e_laskut.php">E-laskut</a><br><br>';
-      echo '<a href="../controllers/uusimaksu.php">Uusi maksu</a></div>';
-
-      echo '<br><br><br>';
-      echo '<br><a href="../controllers/logout.php"><button>Kirjaudu ulos</button></a>';
-    }
-    else {
-        header("Location: ../controllers/login.php");
-      }  echo '</article>';
-    }
-   ?>
-</section>
-
-<footer>
-</footer>
+<?php
+function logged_in(){
+  session_start();
+  echo '<article>';
+  echo '<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>';
+  echo '<table>
+  <tr>
+    <th>Tapahtuma</th>
+    <th>Summa</th>
+    <th>Saldo</th>
+  </tr>
+  <tr>
+    <td>Osto</td>
+    <td>-100 €</td>
+    <td>+690 €</td>
+  </tr>
+  <tr>
+    <td>Osto2</td>
+    <td>-30 €</td>
+    <td>+720 €</td>
+  </tr>
+  <tr>
+    <td>Osto3</td>
+    <td>-200 €</td>
+    <td>+920 €</td>
+  </tr>
+  <tr>
+    <td>Osto4</td>
+    <td>-80 €</td>
+    <td>+1000 €</td>
+  </tr>
+</table>
+';
+  echo '<br><br>';
+  echo '<br><a href="../controllers/login_success.php"><button>Palaa etusivulle</button></a>';
+  echo '<a href="../controllers/logout.php"><button>Kirjaudu ulos</button></a>';
+  echo '</article>';
+}
+?>
 </body>
 </html>

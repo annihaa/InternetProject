@@ -27,6 +27,6 @@ include "../views/login/login_view.php";
   }
 ?>
 </div><br><br>
-<img src="http://www.students.oamk.fi/~t6haan02/aalto.jpg" alt="" width="1500" height="50">
+
 </body>
 </html>

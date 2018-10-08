@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/mystyle.css">
+  <body style="background-color:powderblue;">
+
   <?php
   function add_book_form(){
 
@@ -11,3 +18,5 @@
         </form>';
   }
 ?>
+</body>
+</html>
